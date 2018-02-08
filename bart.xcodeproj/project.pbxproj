@@ -12,9 +12,11 @@
 		49DAC620202CF43900106F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC61E202CF43900106F48 /* Main.storyboard */; };
 		49DAC622202CF43900106F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC621202CF43900106F48 /* Assets.xcassets */; };
 		49DAC625202CF43900106F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC623202CF43900106F48 /* LaunchScreen.storyboard */; };
+		5DAFE973C40DC6C6D28935D7 /* Pods_bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6428A5002FC787FAE15DBE /* Pods_bart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E6428A5002FC787FAE15DBE /* Pods_bart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DAC617202CF43900106F48 /* bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DAC61A202CF43900106F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DAC61C202CF43900106F48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		49DAC621202CF43900106F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49DAC624202CF43900106F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49DAC626202CF43900106F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E45738743BEF44DB323929 /* Pods-bart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bart/Pods-bart.debug.xcconfig"; sourceTree = "<group>"; };
+		D549C007C92C1EA2407E02B4 /* Pods-bart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bart.release.xcconfig"; path = "Pods/Target Support Files/Pods-bart/Pods-bart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DAFE973C40DC6C6D28935D7 /* Pods_bart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				49DAC619202CF43900106F48 /* bart */,
 				49DAC618202CF43900106F48 /* Products */,
+				D07459FD46F12B35F434348C /* Pods */,
+				C153E5492F772593A588B315 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = bart;
 			sourceTree = "<group>";
 		};
+		C153E5492F772593A588B315 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E6428A5002FC787FAE15DBE /* Pods_bart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D07459FD46F12B35F434348C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2E45738743BEF44DB323929 /* Pods-bart.debug.xcconfig */,
+				D549C007C92C1EA2407E02B4 /* Pods-bart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DAC629202CF43900106F48 /* Build configuration list for PBXNativeTarget "bart" */;
 			buildPhases = (
+				6FE26883AB1E6B3037826C40 /* [CP] Check Pods Manifest.lock */,
 				49DAC613202CF43900106F48 /* Sources */,
 				49DAC614202CF43900106F48 /* Frameworks */,
 				49DAC615202CF43900106F48 /* Resources */,
+				CE4C4025A9077A051FC81423 /* [CP] Embed Pods Frameworks */,
+				5D1ED42E7622BAA14CAC5546 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D1ED42E7622BAA14CAC5546 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bart/Pods-bart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE26883AB1E6B3037826C40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE4C4025A9077A051FC81423 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-bart/Pods-bart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bart/Pods-bart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		49DAC613202CF43900106F48 /* Sources */ = {
@@ -272,6 +353,7 @@
 		};
 		49DAC62A202CF43900106F48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2E45738743BEF44DB323929 /* Pods-bart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +369,7 @@
 		};
 		49DAC62B202CF43900106F48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D549C007C92C1EA2407E02B4 /* Pods-bart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
