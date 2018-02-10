@@ -12,6 +12,7 @@
 		498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */; };
 		498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A3202D1F1B00733412 /* StationTableViewCell.swift */; };
 		49BC8124202E670900200DA6 /* ClosestStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8123202E670900200DA6 /* ClosestStationViewController.swift */; };
+		49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8127202F55FF00200DA6 /* Estimate.swift */; };
 		49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC61A202CF43900106F48 /* AppDelegate.swift */; };
 		49DAC620202CF43900106F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC61E202CF43900106F48 /* Main.storyboard */; };
 		49DAC622202CF43900106F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC621202CF43900106F48 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationListTableViewController.swift; sourceTree = "<group>"; };
 		498379A3202D1F1B00733412 /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		49BC8123202E670900200DA6 /* ClosestStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosestStationViewController.swift; sourceTree = "<group>"; };
+		49BC8127202F55FF00200DA6 /* Estimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
 		49DAC617202CF43900106F48 /* bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DAC61A202CF43900106F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DAC61F202CF43900106F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				498379A3202D1F1B00733412 /* StationTableViewCell.swift */,
 				4983799C202D118400733412 /* Station.swift */,
+				49BC8127202F55FF00200DA6 /* Estimate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				49BC8124202E670900200DA6 /* ClosestStationViewController.swift in Sources */,
 				498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */,
 				4983799D202D118400733412 /* Station.swift in Sources */,
+				49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */,
 				498379A0202D182500733412 /* Network.swift in Sources */,
 				49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */,
 			);

@@ -16,6 +16,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        Network().getTimeTable()
     }
     
     override func viewWillAppear(_ animated: Bool) {

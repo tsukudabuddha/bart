@@ -27,4 +27,21 @@ class Network {
         }
         
     }
+    
+    func getTimeTable() {
+        let queryString = "https://api.bart.gov/api/etd.aspx?cmd=etd&orig=civc&key=MW9S-E7SL-26DU-VV8V&json=y"
+        
+        if let queryUrl = URL(string: queryString) {
+            
+            Alamofire.request(queryUrl, method: .get).responseJSON(completionHandler: { (response) in
+                if let data = response.data {
+                    let ttContainer = try? JSONDecoder().decode(TimeTableContainer.self, from: data)
+                    if let timetable = ttContainer?.stationTimeTables[0] {
+                        print(timetable)
+                    }
+                }
+            })
+            
+        }
+    }
 }
