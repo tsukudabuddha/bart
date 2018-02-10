@@ -21,7 +21,6 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         /* Make tableview transparent */
-//        self.tableView.layer.backgroundColor = 
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +29,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "timeTableCell", for: indexPath)
         
         return cell
     
