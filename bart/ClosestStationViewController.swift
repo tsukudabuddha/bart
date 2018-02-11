@@ -11,12 +11,25 @@ import UIKit
 class ClosestStationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var timeTable: TimeTable? = nil {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        Network().getTimeTable()
+        Network().getTimeTable { (timeTable) in
+            var sortedTimeTable = timeTable
+            sortedTimeTable.etd.sort()
+            
+            self.timeTable = sortedTimeTable
+            print(self.timeTable)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +42,13 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "timeTableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "timeTableCell", for: indexPath) as! TimeTableTableViewCell
+        if let timeTable = self.timeTable {
+            let timeTableEntry = timeTable.etd[indexPath.row]
+            cell.destinationLabel.text = timeTableEntry.destination
+            cell.closestTrainTimeLabel.text = "\(timeTableEntry.estimates[0].minutes) min"
+            cell.platformLabel.text = "Platform \(timeTableEntry.estimates[0].platform)"
+        }
         
         return cell
     
@@ -37,7 +56,11 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        var rows = 0
+        if let timeTable = self.timeTable {
+            rows = timeTable.etd.count
+        }
+        return rows
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49455C34202FD71D0017926C /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49455C33202FD71D0017926C /* UIColor+extension.swift */; };
+		49455C36202FDA330017926C /* TimeTableEntry+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49455C35202FDA330017926C /* TimeTableEntry+extension.swift */; };
 		4983799D202D118400733412 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799C202D118400733412 /* Station.swift */; };
 		498379A0202D182500733412 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799F202D182500733412 /* Network.swift */; };
 		498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		0E6428A5002FC787FAE15DBE /* Pods_bart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49455C33202FD71D0017926C /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		49455C35202FDA330017926C /* TimeTableEntry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeTableEntry+extension.swift"; sourceTree = "<group>"; };
 		4983799C202D118400733412 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		4983799F202D182500733412 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationListTableViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49455C32202FD7050017926C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49455C33202FD71D0017926C /* UIColor+extension.swift */,
+				49455C35202FDA330017926C /* TimeTableEntry+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4983799E202D118B00733412 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 				4983799E202D118B00733412 /* Models */,
 				49DAC61E202CF43900106F48 /* Main.storyboard */,
 				49BC8123202E670900200DA6 /* ClosestStationViewController.swift */,
+				49455C32202FD7050017926C /* Extensions */,
 				498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */,
 				49DAC621202CF43900106F48 /* Assets.xcassets */,
 				49DAC623202CF43900106F48 /* LaunchScreen.storyboard */,
@@ -245,7 +259,9 @@
 			files = (
 				498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */,
 				49BC812A202F639400200DA6 /* TimeTableTableViewCell.swift in Sources */,
+				49455C36202FDA330017926C /* TimeTableEntry+extension.swift in Sources */,
 				49BC8124202E670900200DA6 /* ClosestStationViewController.swift in Sources */,
+				49455C34202FD71D0017926C /* UIColor+extension.swift in Sources */,
 				498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */,
 				4983799D202D118400733412 /* Station.swift in Sources */,
 				49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */,

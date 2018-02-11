@@ -96,7 +96,7 @@ extension TimeTableContainer: Decodable {
 
 struct TimeTable {
     let origin: String
-    let etd: [TimeTableEntry]
+    var etd: [TimeTableEntry]
 }
 
 extension TimeTable: Decodable {
