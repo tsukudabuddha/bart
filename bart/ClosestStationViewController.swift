@@ -24,6 +24,8 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
 
         // Do any additional setup after loading the view.
         Network().getTimeTable { (timeTable) in
+            
+            /* Create new mutable variable to sort before tableview decides order */
             var sortedTimeTable = timeTable
             sortedTimeTable.etd.sort()
             
@@ -45,8 +47,20 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
         if let timeTable = self.timeTable {
             let timeTableEntry = timeTable.etd[indexPath.row]
             cell.destinationLabel.text = timeTableEntry.destination
-            cell.closestTrainTimeLabel.text = "\(timeTableEntry.estimates[0].minutes) min"
+            if let minutesToLeave = Int(timeTableEntry.estimates[0].minutes) {
+                cell.closestTrainTimeLabel.text = "\(minutesToLeave) min"
+            } else {
+                cell.closestTrainTimeLabel.text = "Leaving"
+            }
+            
             cell.platformLabel.text = "Platform \(timeTableEntry.estimates[0].platform)"
+            
+            /* Create white border around each cell */
+            cell.contentView.layer.borderColor = UIColor.white.cgColor
+            cell.contentView.layer.borderWidth = 0.5
+            
+            /* Make Each Cell transparent */
+            cell.backgroundColor = UIColor.clear
         }
         
         return cell
