@@ -28,7 +28,6 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
             sortedTimeTable.etd.sort()
             
             self.timeTable = sortedTimeTable
-            print(self.timeTable)
         }
     }
     
