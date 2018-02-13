@@ -5,6 +5,8 @@
 //  Created by Andrew Tsukuda on 2/9/18.
 //  Copyright © 2018 Andrew Tsukuda. All rights reserved.
 //
+// Most of the CLLocation was found on apple documentation and the link below
+// http://swiftdeveloperblog.com/code-examples/determine-users-current-location-example-in-swift/
 
 import UIKit
 import CoreLocation
@@ -15,6 +17,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     var allStations: [Station] = []
     var closestStation: Station? = nil
     
+    @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var timeTable: TimeTable? = nil {
         didSet {
@@ -69,6 +72,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
         /* Found Closest Station */
+        stationLabel.text = self.closestStation?.name ?? "Still Searching"
         Network().getTimeTable(abbreviation: self.closestStation?.abbreviation ?? "12th") { (timeTable) in
             
             /* Create new mutable variable to sort before tableview decides order */
