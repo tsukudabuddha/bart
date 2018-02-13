@@ -28,8 +28,8 @@ class Network {
         
     }
     
-    func getTimeTable(completion: @escaping (TimeTable) -> ()) {
-        let queryString = "https://api.bart.gov/api/etd.aspx?cmd=etd&orig=civc&key=MW9S-E7SL-26DU-VV8V&json=y"
+    func getTimeTable(abbreviation: String, completion: @escaping (TimeTable) -> ()) {
+        let queryString = "https://api.bart.gov/api/etd.aspx?cmd=etd&orig=\(abbreviation.lowercased())&key=MW9S-E7SL-26DU-VV8V&json=y"
         
         if let queryUrl = URL(string: queryString) {
             

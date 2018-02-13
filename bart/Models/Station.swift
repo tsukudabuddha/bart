@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreLocation
 
 struct Station {
     let name: String
@@ -19,6 +19,8 @@ struct Station {
     let county: String
     let state: String
     let zipcode: String
+    let location: CLLocation
+    var distanceFromUser: CLLocationDistance? = nil
 }
 
 extension Station: Decodable {
@@ -46,6 +48,7 @@ extension Station: Decodable {
         county = try container.decode(String.self, forKey: .county)
         state = try container.decode(String.self, forKey: .state)
         zipcode = try container.decode(String.self, forKey: .zipcode)
+        location = CLLocation(latitude: CLLocationDegrees(latitude)!, longitude: CLLocationDegrees(longitude)!)
     }
 }
 

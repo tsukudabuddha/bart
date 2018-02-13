@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ClosestStationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClosestStationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager!
+    var allStations: [Station] = []
+    var closestStation: Station? = nil
     
     @IBOutlet weak var tableView: UITableView!
     var timeTable: TimeTable? = nil {
@@ -23,7 +28,48 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        Network().getTimeTable { (timeTable) in
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        /* Get all stations */
+        
+        Network().getStations { (allStations) in
+            self.allStations = allStations
+            self.closestStation = allStations[0]
+            
+            /* Find user's location after getting staion list */
+            self.determineMyCurrentLocation()
+        }
+        
+    }
+    
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        
+        manager.stopUpdatingLocation()
+        
+        for station in self.allStations {
+            if userLocation.distance(from: station.location) < userLocation.distance(from: (self.closestStation?.location)!) {
+                self.closestStation = station
+            }
+        }
+        /* Found Closest Station */
+        Network().getTimeTable(abbreviation: self.closestStation?.abbreviation ?? "12th") { (timeTable) in
             
             /* Create new mutable variable to sort before tableview decides order */
             var sortedTimeTable = timeTable
@@ -33,8 +79,9 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        /* Make tableview transparent */
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error \(error)")
     }
 
     override func didReceiveMemoryWarning() {
