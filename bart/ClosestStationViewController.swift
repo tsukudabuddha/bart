@@ -59,7 +59,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
             cell.contentView.layer.borderColor = UIColor.white.cgColor
             cell.contentView.layer.borderWidth = 0.5
             
-            /* Make Each Cell transparent */
+            /* Make Each Cell °•°° */
             cell.backgroundColor = UIColor.clear
         }
         
@@ -68,12 +68,8 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        var rows = 0
-        if let timeTable = self.timeTable {
-            rows = timeTable.etd.count
-        }
-        return rows
+        /* Return the number of tte if there is a time table-- default to 0 if not found */
+        return self.timeTable?.etd.count ?? 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
