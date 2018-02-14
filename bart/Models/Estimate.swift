@@ -11,7 +11,7 @@ import Foundation
 struct TimeTableEntry {
     let destination: String
     let estimates: [TrainEstimate]
-    var nextTimes: [String] = []
+    var nextTimesString: String
     
 }
 
@@ -27,8 +27,9 @@ extension TimeTableEntry: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         destination = try container.decode(String.self, forKey: .destination)
         estimates = try container.decode([TrainEstimate].self, forKey: .estimates)
-        nextTimes = estimates.map {estimate in estimate.minutes}
-        print("nextTimes: \(nextTimes)")
+        var nextTimes = estimates.map {estimate in estimate.minutes}
+        nextTimes.remove(at: 0) // Remove the soonest estimate-- used in current station
+        nextTimesString = (nextTimes.joined(separator: ", "))
     }
 }
 

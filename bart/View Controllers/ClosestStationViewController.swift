@@ -60,6 +60,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
             } else {
                 cell.closestTrainTimeLabel.text = "Leaving"
             }
+            cell.otherTrainEstimatesLabel.text = "\(timeTableEntry.nextTimesString) min"
             
             cell.platformLabel.text = "Platform \(timeTableEntry.estimates[0].platform)"
             
