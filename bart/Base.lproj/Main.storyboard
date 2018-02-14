@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="218" y="-1139"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="P5Q-ze-ROZ">
             <objects>
-                <tabBarController id="KaI-LE-zY1" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CGV-uB-Jbz">
+                <tabBarController id="KaI-LE-zY1" customClass="MainTabBarViewController" customModule="bart" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="CGV-uB-Jbz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
