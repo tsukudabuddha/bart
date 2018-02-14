@@ -61,7 +61,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
                 cell.closestTrainTimeLabel.text = "Leaving"
             }
             cell.otherTrainEstimatesLabel.text = "\(timeTableEntry.nextTimesString) min"
-            
+            cell.trainColorView.backgroundColor = UIColor(hex: timeTableEntry.estimates[0].hexColor)
             cell.platformLabel.text = "Platform \(timeTableEntry.estimates[0].platform)"
             
             /* Create white border around each cell */

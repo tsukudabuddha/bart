@@ -19,6 +19,7 @@
 		49DAC620202CF43900106F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC61E202CF43900106F48 /* Main.storyboard */; };
 		49DAC622202CF43900106F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC621202CF43900106F48 /* Assets.xcassets */; };
 		49DAC625202CF43900106F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC623202CF43900106F48 /* LaunchScreen.storyboard */; };
+		49E9AAAF2034B1F200915238 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9AAAE2034B1F200915238 /* UIColor+extension.swift */; };
 		5DAFE973C40DC6C6D28935D7 /* Pods_bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6428A5002FC787FAE15DBE /* Pods_bart.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		49DAC621202CF43900106F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49DAC624202CF43900106F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49DAC626202CF43900106F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E9AAAE2034B1F200915238 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		B2E45738743BEF44DB323929 /* Pods-bart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bart/Pods-bart.debug.xcconfig"; sourceTree = "<group>"; };
 		D549C007C92C1EA2407E02B4 /* Pods-bart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bart.release.xcconfig"; path = "Pods/Target Support Files/Pods-bart/Pods-bart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				49455C35202FDA330017926C /* TimeTableEntry+extension.swift */,
+				49E9AAAE2034B1F200915238 /* UIColor+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */,
 				4983799D202D118400733412 /* Station.swift in Sources */,
 				49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */,
+				49E9AAAF2034B1F200915238 /* UIColor+extension.swift in Sources */,
 				498379A0202D182500733412 /* Network.swift in Sources */,
 				49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */,
 			);
