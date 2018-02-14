@@ -32,6 +32,12 @@ class AllStationListTableViewController: UITableViewController {
             self.stations = apiStations
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let backgroundImage = UIImage(named: "Background")
+        let backgroundView = UIImageView(image: backgroundImage!)
+        self.tableView.backgroundView = backgroundView
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,6 +62,9 @@ class AllStationListTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.nameLabel.text = stations[indexPath.row].name
+        
+        /* Make Each Cell °•°° */
+        cell.backgroundColor = UIColor.clear
         
         return cell
     }

@@ -97,15 +97,23 @@
 			children = (
 				49DAC61A202CF43900106F48 /* AppDelegate.swift */,
 				4983799E202D118B00733412 /* Models */,
-				49DAC61E202CF43900106F48 /* Main.storyboard */,
-				49BC8123202E670900200DA6 /* ClosestStationViewController.swift */,
+				49E9AAAD2033EDE000915238 /* View Controllers */,
 				49455C32202FD7050017926C /* Extensions */,
-				498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */,
-				49DAC621202CF43900106F48 /* Assets.xcassets */,
+				49DAC61E202CF43900106F48 /* Main.storyboard */,
 				49DAC623202CF43900106F48 /* LaunchScreen.storyboard */,
+				49DAC621202CF43900106F48 /* Assets.xcassets */,
 				49DAC626202CF43900106F48 /* Info.plist */,
 			);
 			path = bart;
+			sourceTree = "<group>";
+		};
+		49E9AAAD2033EDE000915238 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */,
+				49BC8123202E670900200DA6 /* ClosestStationViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		C153E5492F772593A588B315 /* Frameworks */ = {
