@@ -16,6 +16,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     var locationManager: CLLocationManager!
     var allStations: [Station] = []
     var closestStation: Station? = nil
+    var refreshTimer: Timer! // This is to auto refresh times every 45 sec
     
     @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -30,7 +31,6 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,10 +39,18 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
             self.allStations = allStations
             self.closestStation = allStations[0]
             
-            /* Find user's location after getting staion list */
+            /* Find user's location after getting station list */
             self.determineMyCurrentLocation() // In extension at bottom of file
         }
         
+        /* Start Refresh Timer */
+        refreshTimer = Timer.scheduledTimer(timeInterval: 45, target: self, selector: #selector(getTimeTable), userInfo: nil, repeats: true)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        /* Stop refresh timer */
+        self.refreshTimer.invalidate() // view refreshes in view will appear and restarts timer
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,8 +92,6 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    
     
 
     /*
@@ -129,6 +135,10 @@ extension ClosestStationViewController: CLLocationManagerDelegate {
         
         /* Found Closest Station */
         stationLabel.text = self.closestStation?.name ?? "Still Searching"
+        getTimeTable()
+    }
+    
+    @objc func getTimeTable() {
         Network().getTimeTable(abbreviation: self.closestStation?.abbreviation ?? "12th") { (timeTable) in
             
             /* Create new mutable variable to sort before tableview decides order */
