@@ -16,10 +16,11 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     var locationManager: CLLocationManager!
     var allStations: [Station] = []
     var closestStation: Station? = nil
-    var refreshTimer: Timer! // This is to auto refresh times every 45 sec
+    var refreshTimer: Timer! // auto refresh times every 45 sec-- starts in view will appear
     
     @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     var timeTable: TimeTable? = nil {
         didSet {
             DispatchQueue.main.async {
@@ -59,7 +60,10 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /* Get access to cell */
         let cell = tableView.dequeueReusableCell(withIdentifier: "timeTableCell", for: indexPath) as! TimeTableTableViewCell
+        
+        /* Safely unwrap timetable in order to configure cell */
         if let timeTable = self.timeTable {
             let timeTableEntry = timeTable.etd[indexPath.row]
             cell.destinationLabel.text = timeTableEntry.destination
@@ -76,7 +80,7 @@ class ClosestStationViewController: UIViewController, UITableViewDelegate, UITab
             cell.contentView.layer.borderColor = UIColor.white.cgColor
             cell.contentView.layer.borderWidth = 0.5
             
-            /* Make Each Cell °•°° */
+            /* Make Each Cell transparent °•°° */
             cell.backgroundColor = UIColor.clear
         }
         
