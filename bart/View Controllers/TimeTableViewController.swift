@@ -45,6 +45,7 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
             /* Make button align with station label */
             self.view.addConstraint(NSLayoutConstraint(item: backButton, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: stationLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
             
+            self.view.addConstraint(NSLayoutConstraint(item: backButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: stationLabel, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -5))
             
         }
     }
