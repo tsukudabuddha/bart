@@ -15,6 +15,7 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var refreshTimer: Timer! // auto refresh times every 45 sec-- starts in view will appear
     var chosenStation: Station? = nil
+    var showbackButton: Bool = false
     
     @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -33,9 +34,27 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if self.showbackButton {
+            let buttonFrame = CGRect(x: 10, y: self.stationLabel.frame.midY, width: 25, height: 25)
+            let backButton = UIButton(frame: buttonFrame)
+            let backButtomImage = UIImage(named: "left-arrow")
+            backButton.setBackgroundImage(backButtomImage, for: .normal)
+            self.view.addSubview(backButton)
+            
+            backButton.addTarget(self, action: #selector(popController), for: UIControlEvents.touchUpInside)
+            
+            /* Make button align with station label */
+            self.view.addConstraint(NSLayoutConstraint(item: backButton, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: stationLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
+            
+            
+        }
         /* Start Refresh Timer */
         refreshTimer = Timer.scheduledTimer(timeInterval: 45, target: self, selector: #selector(getTimeTable), userInfo: nil, repeats: true)
         
+    }
+    
+    @objc func popController() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

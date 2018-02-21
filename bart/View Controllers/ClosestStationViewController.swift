@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 class ClosestStationViewController: TimeTableViewController {
     
@@ -30,6 +31,7 @@ class ClosestStationViewController: TimeTableViewController {
                 self.determineMyCurrentLocation() // In extension at bottom of file
             }
         }
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         super.viewWillAppear(animated) // Start Refresh timer
     }
 }
