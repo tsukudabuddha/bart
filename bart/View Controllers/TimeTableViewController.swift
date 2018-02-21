@@ -31,14 +31,13 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
         if self.showbackButton {
             let buttonFrame = CGRect(x: 10, y: self.stationLabel.frame.midY, width: 25, height: 25)
             let backButton = UIButton(frame: buttonFrame)
             let backButtomImage = UIImage(named: "left-arrow")
             backButton.setBackgroundImage(backButtomImage, for: .normal)
+            
             self.view.addSubview(backButton)
             
             backButton.addTarget(self, action: #selector(popController), for: UIControlEvents.touchUpInside)
@@ -48,6 +47,9 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
             
             
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         /* Start Refresh Timer */
         refreshTimer = Timer.scheduledTimer(timeInterval: 45, target: self, selector: #selector(getTimeTable), userInfo: nil, repeats: true)
         
