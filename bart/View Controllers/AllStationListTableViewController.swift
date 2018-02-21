@@ -26,7 +26,7 @@ class AllStationListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+
         let network = Network()
         network.getStations { (apiStations) in
             self.stations = apiStations
@@ -37,6 +37,7 @@ class AllStationListTableViewController: UITableViewController {
         let backgroundImage = UIImage(named: "Background")
         let backgroundView = UIImageView(image: backgroundImage!)
         self.tableView.backgroundView = backgroundView
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +68,16 @@ class AllStationListTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.clear
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let chosenStation = stations[indexPath.row]
+        let timeTableVC = storyboard?.instantiateViewController(withIdentifier: "timeTableVC") as! TimeTableViewController
+        timeTableVC.chosenStation = chosenStation
+        
+        self.navigationController?.pushViewController(timeTableVC as! TimeTableViewController, animated: true)
+       
     }
     
 

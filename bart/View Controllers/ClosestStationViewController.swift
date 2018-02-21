@@ -2,112 +2,36 @@
 //  ClosestStationViewController.swift
 //  bart
 //
-//  Created by Andrew Tsukuda on 2/9/18.
+//  Created by Andrew Tsukuda on 2/21/18.
 //  Copyright © 2018 Andrew Tsukuda. All rights reserved.
 //
-// Most of the CLLocation was found on apple documentation and the link below
-// http://swiftdeveloperblog.com/code-examples/determine-users-current-location-example-in-swift/
 
-import UIKit
+import Foundation
 import CoreLocation
 
-class ClosestStationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClosestStationViewController: TimeTableViewController {
     
     var locationManager: CLLocationManager!
     var allStations: [Station] = []
     var closestStation: Station? = nil
-    var refreshTimer: Timer! // auto refresh times every 45 sec-- starts in view will appear
-    
-    @IBOutlet weak var stationLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
-    
-    var timeTable: TimeTable? = nil {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
     
     override func viewWillAppear(_ animated: Bool) {
-        /* Get all stations */
-        Network().getStations { (allStations) in
-            self.allStations = allStations
-            self.closestStation = allStations[0]
-            
-            /* Find user's location after getting station list */
-            self.determineMyCurrentLocation() // In extension at bottom of file
-        }
         
-        /* Start Refresh Timer */
-        refreshTimer = Timer.scheduledTimer(timeInterval: 45, target: self, selector: #selector(getTimeTable), userInfo: nil, repeats: true)
-        
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        /* Stop refresh timer */
-        self.refreshTimer.invalidate() // view refreshes in view will appear and restarts timer
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /* Get access to cell */
-        let cell = tableView.dequeueReusableCell(withIdentifier: "timeTableCell", for: indexPath) as! TimeTableTableViewCell
-        
-        /* Safely unwrap timetable in order to configure cell */
-        if let timeTable = self.timeTable {
-            let timeTableEntry = timeTable.etd[indexPath.row]
-            cell.destinationLabel.text = timeTableEntry.destination
-            if let minutesToLeave = Int(timeTableEntry.estimates[0].minutes) {
-                cell.closestTrainTimeLabel.text = "\(minutesToLeave) min"
-            } else {
-                cell.closestTrainTimeLabel.text = "Leaving"
+        if let chosenStation = super.chosenStation {
+            super.getTimeTable()
+            super.stationLabel.text = chosenStation.name
+        } else {
+            /* Get all stations */
+            Network().getStations { (allStations) in
+                self.allStations = allStations
+                self.closestStation = allStations[0]
+                
+                /* Find user's location after getting station list */
+                self.determineMyCurrentLocation() // In extension at bottom of file
             }
-            cell.otherTrainEstimatesLabel.text = "\(timeTableEntry.nextTimesString) min"
-            cell.trainColorView.backgroundColor = UIColor(hex: timeTableEntry.estimates[0].hexColor)
-            cell.platformLabel.text = "Platform \(timeTableEntry.estimates[0].platform)"
-            
-            /* Create white border around each cell */
-            cell.contentView.layer.borderColor = UIColor.white.cgColor
-            cell.contentView.layer.borderWidth = 0.5
-            
-            /* Make Each Cell transparent °•°° */
-            cell.backgroundColor = UIColor.clear
         }
-        
-        return cell
-    
+        super.viewWillAppear(animated) // Start Refresh timer
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /* Return the number of tte if there is a time table-- default to 0 if not found */
-        return self.timeTable?.etd.count ?? 0
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ClosestStationViewController: CLLocationManagerDelegate {
@@ -130,7 +54,7 @@ extension ClosestStationViewController: CLLocationManagerDelegate {
         // other wise this function will be called every time when user location changes.
         
         manager.stopUpdatingLocation()
-        
+
         for station in self.allStations {
             if userLocation.distance(from: station.location) < userLocation.distance(from: (self.closestStation?.location)!) {
                 self.closestStation = station
@@ -139,18 +63,8 @@ extension ClosestStationViewController: CLLocationManagerDelegate {
         
         /* Found Closest Station */
         stationLabel.text = self.closestStation?.name ?? "Still Searching"
-        getTimeTable()
-    }
-    
-    @objc func getTimeTable() {
-        Network().getTimeTable(abbreviation: self.closestStation?.abbreviation ?? "12th") { (timeTable) in
-            
-            /* Create new mutable variable to sort before tableview decides order */
-            var sortedTimeTable = timeTable
-            sortedTimeTable.etd.sort()
-            
-            self.timeTable = sortedTimeTable
-        }
+        super.chosenStation = self.closestStation
+        super.getTimeTable()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

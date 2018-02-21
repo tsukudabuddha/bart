@@ -19,6 +19,13 @@ class TimeTableTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        /* Create white border around each cell */
+        self.contentView.layer.borderColor = UIColor.white.cgColor
+        self.contentView.layer.borderWidth = 0.5
+        
+        /* Make Each Cell transparent °•°° */
+        self.backgroundColor = UIColor.clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

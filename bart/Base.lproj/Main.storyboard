@@ -25,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAk-rA-pju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218" y="-1139"/>
+            <point key="canvasLocation" x="441" y="-1137"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="P5Q-ze-ROZ">
@@ -44,7 +44,7 @@
                     <connections>
                         <segue destination="TjB-Uj-nyQ" kind="relationship" relationship="viewControllers" id="5sO-bu-K2x"/>
                         <segue destination="Cwa-8h-Dlu" kind="relationship" relationship="viewControllers" id="Eft-nv-5Gk"/>
-                        <segue destination="44f-zX-RfS" kind="relationship" relationship="viewControllers" id="ExX-Ny-zF8"/>
+                        <segue destination="aCt-Lp-PnC" kind="relationship" relationship="viewControllers" id="YwB-78-AAD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLf-BU-rJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,7 +54,7 @@
         <!--Nearest Station-->
         <scene sceneID="OGs-O2-9Z3">
             <objects>
-                <viewController id="Cwa-8h-Dlu" customClass="ClosestStationViewController" customModule="bart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timeTableVC" id="Cwa-8h-Dlu" customClass="ClosestStationViewController" customModule="bart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t9y-f3-Fuu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,6 +174,23 @@
             </objects>
             <point key="canvasLocation" x="440.80000000000001" y="-331.48425787106447"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="Wv0-ek-ewg">
+            <objects>
+                <navigationController id="aCt-Lp-PnC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Om8-RZ-3LJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G4k-ZM-C8g">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="44f-zX-RfS" kind="relationship" relationship="rootViewController" id="Af1-dY-082"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftG-qN-goX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441" y="562"/>
+        </scene>
         <!--All Stations-->
         <scene sceneID="O78-JI-Bf3">
             <objects>
@@ -214,10 +231,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="All Stations" id="fBm-pA-1Oe"/>
+                    <navigationItem key="navigationItem" title="All Stations" id="hed-m9-jnR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qe-P6-eo2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="391" y="577"/>
+            <point key="canvasLocation" x="1433" y="562"/>
         </scene>
     </scenes>
     <resources>
