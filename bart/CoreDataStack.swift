@@ -14,7 +14,7 @@ public final class CoreDataStack {
     
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(
-            name: "Favorites"
+            name: "Favorite"
         )
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -46,10 +46,10 @@ public final class CoreDataStack {
     }
     
     func delete(context: NSManagedObjectContext, objectToDelete: NSManagedObject) {
-        let fetchRequest = NSFetchRequest<Favorite>(entityName: "Favorite")
+        let fetchRequest = NSFetchRequest<FavoriteList>(entityName: "FavoriteList")
         do {
-            let result = try context.fetch(fetchRequest)
-            for item in result {
+            let result = try context.fetch(fetchRequest) as! FavoriteList
+            for item in result.favorites! {
                 if item.objectID == objectToDelete.objectID {
                     context.delete(objectToDelete)
                 }

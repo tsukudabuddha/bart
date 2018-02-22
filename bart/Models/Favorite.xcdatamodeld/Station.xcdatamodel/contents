@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Favorite" representedClassName="Favorite" syncable="YES" codeGenerationType="class">
-        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="FavoriteList" representedClassName="FavoriteList" syncable="YES" codeGenerationType="class">
+        <attribute name="favorites" optional="YES" attributeType="Transformable" customClassName="[FavoriteStation]" syncable="YES"/>
+    </entity>
+    <entity name="FavoriteStation" representedClassName=".FavoriteStation" syncable="YES" codeGenerationType="class">
+        <attribute name="abbreviation" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Favorite" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="FavoriteList" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="FavoriteStation" positionX="106" positionY="-30" width="128" height="73"/>
     </elements>
 </model>

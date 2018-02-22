@@ -1,44 +1,54 @@
 //
-//  AllStationListTableViewController.swift
+//  FavoritesTableViewController.swift
 //  bart
 //
-//  Created by Andrew Tsukuda on 2/8/18.
+//  Created by Andrew Tsukuda on 2/21/18.
 //  Copyright © 2018 Andrew Tsukuda. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-class AllStationListTableViewController: UITableViewController {
+class FavoritesTableViewController: UITableViewController {
     
-    var stations = [Station]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    var stations: [FavoriteStation]? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-
-        let network = Network()
-        network.getStations { (apiStations) in
-            self.stations = apiStations
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
+        /* Set up background */
         let backgroundImage = UIImage(named: "Background")
         let backgroundView = UIImageView(image: backgroundImage!)
         self.tableView.backgroundView = backgroundView
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        /* Get favorites from core data */
+        fetchFavorites()
+    }
 
+    
+    func fetchFavorites() {
+        let stack = CoreDataStack.instance
+        let fetchRequest = NSFetchRequest<FavoriteList>(entityName: "FavoriteList")
+        do {
+            self.stations = []
+            let results = try stack.viewContext.fetch(fetchRequest)
+            for result in results {
+                if let favorites = result.favorites {
+                    for fav in favorites {
+                        self.stations?.append(fav)
+                    }
+                }
+            }
+//            self.stations
+            self.tableView.reloadData()
+            
+        } catch let error {
+            print("error: \(error)")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,57 +58,25 @@ class AllStationListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.stations.count
+        return 0
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.nameLabel.text = stations[indexPath.row].name
-
+        cell.textLabel?.text = stations![indexPath.row].name
+        
         // Make Each Cell °•°°
         cell.backgroundColor = UIColor.clear
-        
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chosenStation = stations[indexPath.row]
-        let timeTableVC = storyboard?.instantiateViewController(withIdentifier: "timeTableVC") as! TimeTableViewController
-        timeTableVC.chosenStation = chosenStation
-        timeTableVC.showbackButton = true
-        
-        /* Un-hilight row */
-        self.tableView.deselectRow(at: indexPath, animated: true)
-        
-        self.navigationController?.pushViewController(timeTableVC as! TimeTableViewController, animated: true)
-       
-    }
-    
-    override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
-        let favoriteAction = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
-            
-            let cds = CoreDataStack.instance
-            let chosenStation = self.stations[editActionsForRowAt.row]
-            let stationToSave = FavoriteStation(context: cds.privateContext)
-            stationToSave.name = chosenStation.name
-            stationToSave.abbreviation = chosenStation.abbreviation
-            let holder = FavoriteList(context: cds.privateContext)
-            holder.favorites?.append(stationToSave)
-            
-            cds.saveTo(context: cds.privateContext)
-        }
-        favoriteAction.backgroundColor = .blue
-        return [favoriteAction]
-    }
-    
 
     /*
     // Override to support conditional editing of the table view.
