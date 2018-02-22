@@ -5,6 +5,10 @@
 //  Created by Andrew Tsukuda on 2/8/18.
 //  Copyright © 2018 Andrew Tsukuda. All rights reserved.
 //
+//
+
+// Thanks to Hacking with swift for userdefaults help
+// https://www.hackingwithswift.com/read/12/2/reading-and-writing-basics-userdefaults
 
 import UIKit
 
@@ -84,7 +88,7 @@ class AllStationListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let favoriteAction = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
-            // TODO: Add favorite action -- userdefaults
+            // Add favorite action -- userdefaults
             let defaults = UserDefaults.standard
             var favStations: [Station] = []
             

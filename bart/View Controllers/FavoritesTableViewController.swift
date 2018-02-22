@@ -62,6 +62,20 @@ class FavoritesTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+            
+            self.stations?.remove(at: index.row)
+
+            let encoder = JSONEncoder()
+            if let favoriteStations = try? encoder.encode(self.stations) {
+                UserDefaults.standard.set(favoriteStations, forKey: "favoritesArray")
+            }
+            self.tableView.deleteRows(at: [index], with: UITableViewRowAnimation.fade)
+        }
+        return [delete]
+    }
 
     /*
     // Override to support conditional editing of the table view.
