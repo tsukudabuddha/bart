@@ -25,23 +25,26 @@ class AllStationListViewController: UIViewController, UITableViewDataSource, UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-
-        let network = Network()
-        network.getStations { (apiStations) in
-            self.stations = apiStations
-        }
+        
+        /* Make sure station list is up to date */
+        updateStations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        /* Check if the table is empty */
+        if stations.count == 0 {
+            updateStations()
+        }
         let backgroundImage = UIImage(named: "Background")
         let backgroundView = UIImageView(image: backgroundImage!)
         self.tableView.backgroundView = backgroundView
+    }
+    
+    func updateStations() {
+        Network().getStations { (apiStations) in
+            self.stations = apiStations
+        }
     }
 
     // MARK: - Table view data source
@@ -62,10 +65,7 @@ class AllStationListViewController: UIViewController, UITableViewDataSource, UIT
 
         // Configure the cell...
         cell.textLabel?.text = stations[indexPath.row].name
-
-        // Make Each Cell °•°°
-        cell.backgroundColor = UIColor.clear
-        
+    
         return cell
     }
     
@@ -75,10 +75,11 @@ class AllStationListViewController: UIViewController, UITableViewDataSource, UIT
         timeTableVC.chosenStation = chosenStation
         timeTableVC.showbackButton = true
         
-        /* Un-hilight row */
+        /* Un-hilight row*/
         self.tableView.deselectRow(at: indexPath, animated: true)
         
-        self.navigationController?.pushViewController(timeTableVC as! TimeTableViewController, animated: true)
+        /* Display time table vc for row */
+        self.navigationController?.pushViewController(timeTableVC, animated: true)
        
     }
     
@@ -116,51 +117,5 @@ class AllStationListViewController: UIViewController, UITableViewDataSource, UIT
         favoriteAction.backgroundColor = .blue
         return [favoriteAction]
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

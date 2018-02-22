@@ -67,11 +67,6 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         self.refreshTimer.invalidate() // view refreshes in view will appear and restarts timer
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /* Get access to cell */
         let cell = tableView.dequeueReusableCell(withIdentifier: "timeTableCell", for: indexPath) as! TimeTableTableViewCell
@@ -114,15 +109,5 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
             self.timeTable = sortedTimeTable
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

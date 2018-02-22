@@ -17,11 +17,11 @@ class ClosestStationViewController: TimeTableViewController {
     var closestStation: Station? = nil
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        /* Check to see if this already has a station -- from list */
         if let chosenStation = super.chosenStation {
             super.getTimeTable()
             super.stationLabel.text = chosenStation.name
-        } else {
+        } else { // if no station passed in-- then find closest station and set
             /* Get all stations */
             Network().getStations { (allStations) in
                 self.allStations = allStations
@@ -51,9 +51,6 @@ extension ClosestStationViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
-        
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
         
         manager.stopUpdatingLocation()
 
