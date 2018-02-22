@@ -11,7 +11,7 @@ import CoreData
 
 class FavoritesTableViewController: UITableViewController {
     
-    var stations: [FavoriteStation]? = nil
+    var stations: [Station]? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,32 +23,16 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        /* Get favorites from core data */
-        fetchFavorites()
+        /* Get favorites from User Defaults */
+        let defaults = UserDefaults.standard
+        let decoder = JSONDecoder()
+        if let favoritesData = defaults.data(forKey: "favoritesArray"),
+            let stations = try? decoder.decode([Station].self, from: favoritesData) {
+            self.stations = stations
+        }
+        self.tableView.reloadData()
     }
 
-    
-    func fetchFavorites() {
-        let stack = CoreDataStack.instance
-        let fetchRequest = NSFetchRequest<FavoriteList>(entityName: "FavoriteList")
-        do {
-            self.stations = []
-            let results = try stack.viewContext.fetch(fetchRequest)
-            for result in results {
-                if let favorites = result.favorites {
-                    for fav in favorites {
-                        self.stations?.append(fav)
-                    }
-                }
-            }
-//            self.stations
-            self.tableView.reloadData()
-            
-        } catch let error {
-            print("error: \(error)")
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,19 +42,20 @@ class FavoritesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.stations?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath)
 
         // Configure the cell...
         cell.textLabel?.text = stations![indexPath.row].name
+        cell.textLabel?.textColor = UIColor.white
         
         // Make Each Cell °•°°
         cell.backgroundColor = UIColor.clear

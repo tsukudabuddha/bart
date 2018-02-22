@@ -84,16 +84,34 @@ class AllStationListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let favoriteAction = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
+            // TODO: Add favorite action -- userdefaults
+            let defaults = UserDefaults.standard
+            var favStations: [Station] = []
             
-            let cds = CoreDataStack.instance
-            let chosenStation = self.stations[editActionsForRowAt.row]
-            let stationToSave = FavoriteStation(context: cds.privateContext)
-            stationToSave.name = chosenStation.name
-            stationToSave.abbreviation = chosenStation.abbreviation
-            let holder = FavoriteList(context: cds.privateContext)
-            holder.favorites?.append(stationToSave)
+            let decoder = JSONDecoder()
+            if let favoritesData = defaults.data(forKey: "favoritesArray"),
+                let stations = try? decoder.decode([Station].self, from: favoritesData) {
+                favStations = stations
+            }
+            var canAdd = true
             
-            cds.saveTo(context: cds.privateContext)
+            let selectedStation = self.stations[editActionsForRowAt.row]
+            for station in favStations {
+                if station.abbreviation == selectedStation.abbreviation {
+                    canAdd = false
+                }
+            }
+            
+            /* If the station isn't already in list, add to list */
+            if canAdd {
+                favStations.append(selectedStation)
+                favStations.sort() // Store in sorted order
+                let encoder = JSONEncoder()
+                if let favoriteStations = try? encoder.encode(favStations) {
+                    UserDefaults.standard.set(favoriteStations, forKey: "favoritesArray")
+                }
+            }
+            
         }
         favoriteAction.backgroundColor = .blue
         return [favoriteAction]

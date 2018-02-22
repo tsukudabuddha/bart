@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct Station {
+struct Station: Encodable {
     let name: String
     let abbreviation: String
     let latitude: String
