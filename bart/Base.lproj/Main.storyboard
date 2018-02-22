@@ -62,7 +62,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="UQ7-yg-eTp">
                                 <rect key="frame" x="0.0" y="-14.5" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding Station..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqP-Ck-Nf3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding Station..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqP-Ck-Nf3">
                                 <rect key="frame" x="73.5" y="20" width="276.5" height="50.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,6 +166,7 @@
                     <tabBarItem key="tabBarItem" title="Nearest Station" id="HCX-Pd-APq"/>
                     <connections>
                         <outlet property="stationLabel" destination="OqP-Ck-Nf3" id="78H-At-erj"/>
+                        <outlet property="stationLabelLeadingConstraint" destination="Jwf-18-Jmr" id="Scb-ie-fcc"/>
                         <outlet property="tableView" destination="1Rm-NF-ZYy" id="XYh-FM-Iiq"/>
                     </connections>
                 </viewController>

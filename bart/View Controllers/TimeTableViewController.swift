@@ -19,6 +19,7 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var stationLabelLeadingConstraint: NSLayoutConstraint!
     
     var timeTable: TimeTable? = nil {
         didSet {
@@ -45,8 +46,9 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
             /* Make button align with station label */
             self.view.addConstraint(NSLayoutConstraint(item: backButton, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: stationLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
             
-            self.view.addConstraint(NSLayoutConstraint(item: backButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: stationLabel, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -5))
+            self.view.removeConstraint(stationLabelLeadingConstraint)
             
+            self.view.addConstraint(NSLayoutConstraint(item: stationLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: backButton, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 5))
         }
     }
     
