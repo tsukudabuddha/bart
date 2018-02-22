@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		49455C36202FDA330017926C /* TimeTableEntry+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49455C35202FDA330017926C /* TimeTableEntry+extension.swift */; };
 		49649006203E634900734ED3 /* Station+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49649005203E634900734ED3 /* Station+extension.swift */; };
-		4968F5BF203E539C00A7F011 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4968F5BE203E539C00A7F011 /* FavoritesTableViewController.swift */; };
+		4968F5BF203E539C00A7F011 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4968F5BE203E539C00A7F011 /* FavoritesViewController.swift */; };
 		4983799D202D118400733412 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799C202D118400733412 /* Station.swift */; };
 		498379A0202D182500733412 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799F202D182500733412 /* Network.swift */; };
 		498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */; };
@@ -31,7 +31,7 @@
 		0E6428A5002FC787FAE15DBE /* Pods_bart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49455C35202FDA330017926C /* TimeTableEntry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeTableEntry+extension.swift"; sourceTree = "<group>"; };
 		49649005203E634900734ED3 /* Station+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Station+extension.swift"; sourceTree = "<group>"; };
-		4968F5BE203E539C00A7F011 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		4968F5BE203E539C00A7F011 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		4983799C202D118400733412 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		4983799F202D182500733412 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationListTableViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				49BC8123202E670900200DA6 /* TimeTableViewController.swift */,
 				49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */,
 				49E9AAB02034C28100915238 /* MainTabBarViewController.swift */,
-				4968F5BE203E539C00A7F011 /* FavoritesTableViewController.swift */,
+				4968F5BE203E539C00A7F011 /* FavoritesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 				498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */,
 				49BC812A202F639400200DA6 /* TimeTableTableViewCell.swift in Sources */,
 				49455C36202FDA330017926C /* TimeTableEntry+extension.swift in Sources */,
-				4968F5BF203E539C00A7F011 /* FavoritesTableViewController.swift in Sources */,
+				4968F5BF203E539C00A7F011 /* FavoritesViewController.swift in Sources */,
 				49E9AAB12034C28100915238 /* MainTabBarViewController.swift in Sources */,
 				49BC8124202E670900200DA6 /* TimeTableViewController.swift in Sources */,
 				498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */,
