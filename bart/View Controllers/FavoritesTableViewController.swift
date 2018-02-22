@@ -76,6 +76,19 @@ class FavoritesTableViewController: UITableViewController {
         }
         return [delete]
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chosenStation = stations![indexPath.row]
+        let timeTableVC = storyboard?.instantiateViewController(withIdentifier: "timeTableVC") as! TimeTableViewController
+        timeTableVC.chosenStation = chosenStation
+        timeTableVC.showbackButton = true
+        
+        /* Un-hilight row */
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.navigationController?.pushViewController(timeTableVC as! TimeTableViewController, animated: true)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
