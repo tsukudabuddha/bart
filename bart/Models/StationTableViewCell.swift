@@ -9,12 +9,21 @@
 import UIKit
 
 class StationTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        /* Create white border around each cell */
+        self.contentView.layer.borderColor = UIColor.white.cgColor
+        self.contentView.layer.borderWidth = 0.5
+        
+        /* Make Each Cell transparent °•°° */
+        self.backgroundColor = UIColor.clear
+        selectedBackgroundView?.backgroundColor = UIColor.clear
+        
+        /* Change text color to white */
+        self.textLabel?.textColor = UIColor.white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

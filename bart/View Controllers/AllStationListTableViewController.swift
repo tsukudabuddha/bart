@@ -12,8 +12,9 @@
 
 import UIKit
 
-class AllStationListTableViewController: UITableViewController {
+class AllStationListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     var stations = [Station]() {
         didSet {
             DispatchQueue.main.async {
@@ -43,29 +44,24 @@ class AllStationListTableViewController: UITableViewController {
         self.tableView.backgroundView = backgroundView
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.stations.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StationTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        cell.nameLabel.text = stations[indexPath.row].name
+        cell.textLabel?.text = stations[indexPath.row].name
 
         // Make Each Cell °•°°
         cell.backgroundColor = UIColor.clear
@@ -73,7 +69,7 @@ class AllStationListTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chosenStation = stations[indexPath.row]
         let timeTableVC = storyboard?.instantiateViewController(withIdentifier: "timeTableVC") as! TimeTableViewController
         timeTableVC.chosenStation = chosenStation
@@ -86,7 +82,7 @@ class AllStationListTableViewController: UITableViewController {
        
     }
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let favoriteAction = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
             // Add favorite action -- userdefaults
             let defaults = UserDefaults.standard
