@@ -6,5 +6,6 @@ target 'bart' do
 
   # Pods for bart
   pod 'Alamofire', '~> 4.5'
+  pod 'MarqueeLabel/Swift'
 
 end
