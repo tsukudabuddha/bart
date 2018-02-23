@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="B" translatesAutoresizingMaskIntoConstraints="NO" id="emY-B5-eeI">
-                                <rect key="frame" x="91" y="247.5" width="192" height="192"/>
+                                <rect key="frame" x="155" y="303" width="64" height="81"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,7 +43,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="B" width="192" height="192"/>
+        <image name="B" width="64" height="81"/>
         <image name="Background" width="750" height="1334"/>
     </resources>
 </document>
