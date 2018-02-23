@@ -21,6 +21,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="8Af-lt-NkZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="B" translatesAutoresizingMaskIntoConstraints="NO" id="emY-B5-eeI">
+                                <rect key="frame" x="91" y="247.5" width="192" height="192"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -28,6 +31,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Af-lt-NkZ" secondAttribute="bottom" id="G4P-NX-haW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Af-lt-NkZ" secondAttribute="trailing" id="jAK-oc-TXK"/>
                             <constraint firstItem="8Af-lt-NkZ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="wge-dr-7oX"/>
+                            <constraint firstItem="emY-B5-eeI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="whr-6A-9xJ"/>
+                            <constraint firstItem="emY-B5-eeI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xoq-aK-oi1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +43,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="B" width="192" height="192"/>
         <image name="Background" width="750" height="1334"/>
     </resources>
 </document>
