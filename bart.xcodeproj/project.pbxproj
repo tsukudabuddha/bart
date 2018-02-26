@@ -14,6 +14,7 @@
 		498379A0202D182500733412 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799F202D182500733412 /* Network.swift */; };
 		498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */; };
 		498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A3202D1F1B00733412 /* StationTableViewCell.swift */; };
+		49A7497F2044B84200EAB383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A7497E2044B84200EAB383 /* LaunchScreen.storyboard */; };
 		49ADF1D8203E26AF00680982 /* ClosestStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */; };
 		49BC8124202E670900200DA6 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8123202E670900200DA6 /* TimeTableViewController.swift */; };
 		49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8127202F55FF00200DA6 /* Estimate.swift */; };
@@ -21,7 +22,6 @@
 		49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC61A202CF43900106F48 /* AppDelegate.swift */; };
 		49DAC620202CF43900106F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC61E202CF43900106F48 /* Main.storyboard */; };
 		49DAC622202CF43900106F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC621202CF43900106F48 /* Assets.xcassets */; };
-		49DAC625202CF43900106F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC623202CF43900106F48 /* LaunchScreen.storyboard */; };
 		49E9AAAF2034B1F200915238 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9AAAE2034B1F200915238 /* UIColor+extension.swift */; };
 		49E9AAB12034C28100915238 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9AAB02034C28100915238 /* MainTabBarViewController.swift */; };
 		5DAFE973C40DC6C6D28935D7 /* Pods_bart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6428A5002FC787FAE15DBE /* Pods_bart.framework */; };
@@ -36,6 +36,7 @@
 		4983799F202D182500733412 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationListTableViewController.swift; sourceTree = "<group>"; };
 		498379A3202D1F1B00733412 /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
+		49A7497E2044B84200EAB383 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosestStationViewController.swift; sourceTree = "<group>"; };
 		49BC8123202E670900200DA6 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		49BC8127202F55FF00200DA6 /* Estimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		49DAC61A202CF43900106F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DAC61F202CF43900106F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DAC621202CF43900106F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		49DAC624202CF43900106F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49DAC626202CF43900106F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E9AAAE2034B1F200915238 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		49E9AAB02034C28100915238 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				49E9AAAD2033EDE000915238 /* View Controllers */,
 				49455C32202FD7050017926C /* Extensions */,
 				49DAC61E202CF43900106F48 /* Main.storyboard */,
-				49DAC623202CF43900106F48 /* LaunchScreen.storyboard */,
+				49A7497E2044B84200EAB383 /* LaunchScreen.storyboard */,
 				49DAC621202CF43900106F48 /* Assets.xcassets */,
 				49DAC626202CF43900106F48 /* Info.plist */,
 			);
@@ -210,7 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DAC625202CF43900106F48 /* LaunchScreen.storyboard in Resources */,
+				49A7497F2044B84200EAB383 /* LaunchScreen.storyboard in Resources */,
 				49DAC622202CF43900106F48 /* Assets.xcassets in Resources */,
 				49DAC620202CF43900106F48 /* Main.storyboard in Resources */,
 			);
@@ -305,14 +305,6 @@
 				49DAC61F202CF43900106F48 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		49DAC623202CF43900106F48 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49DAC624202CF43900106F48 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
