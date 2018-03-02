@@ -14,6 +14,7 @@
 		498379A0202D182500733412 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799F202D182500733412 /* Network.swift */; };
 		498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */; };
 		498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A3202D1F1B00733412 /* StationTableViewCell.swift */; };
+		49A250752048E7B500FC6ED5 /* UITextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A250742048E7B400FC6ED5 /* UITextField+extension.swift */; };
 		49A7497F2044B84200EAB383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A7497E2044B84200EAB383 /* LaunchScreen.storyboard */; };
 		49ADF1D8203E26AF00680982 /* ClosestStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */; };
 		49BC8124202E670900200DA6 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8123202E670900200DA6 /* TimeTableViewController.swift */; };
@@ -36,6 +37,7 @@
 		4983799F202D182500733412 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationListTableViewController.swift; sourceTree = "<group>"; };
 		498379A3202D1F1B00733412 /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
+		49A250742048E7B400FC6ED5 /* UITextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extension.swift"; sourceTree = "<group>"; };
 		49A7497E2044B84200EAB383 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosestStationViewController.swift; sourceTree = "<group>"; };
 		49BC8123202E670900200DA6 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				49455C35202FDA330017926C /* TimeTableEntry+extension.swift */,
 				49E9AAAE2034B1F200915238 /* UIColor+extension.swift */,
 				49649005203E634900734ED3 /* Station+extension.swift */,
+				49A250742048E7B400FC6ED5 /* UITextField+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,11 +264,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-bart/Pods-bart-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -289,6 +294,7 @@
 				498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */,
 				4983799D202D118400733412 /* Station.swift in Sources */,
 				49ADF1D8203E26AF00680982 /* ClosestStationViewController.swift in Sources */,
+				49A250752048E7B500FC6ED5 /* UITextField+extension.swift in Sources */,
 				49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */,
 				49E9AAAF2034B1F200915238 /* UIColor+extension.swift in Sources */,
 				498379A0202D182500733412 /* Network.swift in Sources */,

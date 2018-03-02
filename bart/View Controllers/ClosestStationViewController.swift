@@ -9,12 +9,31 @@
 import Foundation
 import CoreLocation
 import UIKit
+import Presentr
 
 class ClosestStationViewController: TimeTableViewController {
     
     var locationManager: CLLocationManager!
     var allStations: [Station] = []
     var closestStation: Station? = nil
+    
+    let presenter: Presentr = {
+        let width = ModalSize.full
+        let height = ModalSize.fluid(percentage: 0.60)
+        let center = ModalCenterPosition.center
+        let customType = PresentationType.custom(width: width, height: height, center: center)
+        
+        let customPresenter = Presentr(presentationType: customType)
+        customPresenter.transitionType = .coverVerticalFromTop
+        customPresenter.dismissTransitionType = .crossDissolve
+        customPresenter.roundCorners = true
+        customPresenter.cornerRadius = 15
+        customPresenter.backgroundColor = .clear
+        customPresenter.backgroundOpacity = 0.5
+        customPresenter.dismissOnSwipe = true
+        customPresenter.dismissOnSwipeDirection = .top
+        return customPresenter
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         /* Check to see if this already has a station -- from list */
@@ -34,6 +53,15 @@ class ClosestStationViewController: TimeTableViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         super.viewWillAppear(animated) // Start Refresh timer
     }
+    
+    
+    @IBAction func directionsClicked(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "favoritesVC")
+        customPresentViewController(presenter, viewController: controller!, animated: true, completion: nil)
+    }
+    
+    
+    
 }
 
 extension ClosestStationViewController: CLLocationManagerDelegate {
