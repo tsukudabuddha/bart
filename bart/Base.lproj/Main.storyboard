@@ -62,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="-14.5" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding Station..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqP-Ck-Nf3" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                <rect key="frame" x="57" y="20" width="293" height="50.5"/>
+                                <rect key="frame" x="41" y="20" width="293" height="50.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -159,16 +159,22 @@
                                     <outlet property="delegate" destination="Cwa-8h-Dlu" id="YeM-uu-onG"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cm-pY-cHB">
+                                <rect key="frame" x="338" y="35" width="22" height="23"/>
+                                <state key="normal" image="sign"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ide-rL-irr" firstAttribute="bottom" secondItem="1Rm-NF-ZYy" secondAttribute="bottom" id="BTc-cZ-j6E"/>
+                            <constraint firstItem="0cm-pY-cHB" firstAttribute="leading" secondItem="OqP-Ck-Nf3" secondAttribute="trailing" constant="4" id="Bwg-qA-yp7"/>
+                            <constraint firstItem="0cm-pY-cHB" firstAttribute="top" secondItem="ide-rL-irr" secondAttribute="top" constant="15" id="CW2-E1-e5x"/>
                             <constraint firstItem="UQ7-yg-eTp" firstAttribute="centerY" secondItem="ide-rL-irr" secondAttribute="centerY" id="FDF-6J-8nJ"/>
-                            <constraint firstItem="OqP-Ck-Nf3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ide-rL-irr" secondAttribute="leading" constant="25" id="Jwf-18-Jmr"/>
+                            <constraint firstItem="OqP-Ck-Nf3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t9y-f3-Fuu" secondAttribute="leading" constant="20" symbolic="YES" id="LRo-5K-xSq"/>
                             <constraint firstItem="1Rm-NF-ZYy" firstAttribute="top" secondItem="OqP-Ck-Nf3" secondAttribute="bottom" constant="10" id="QRx-IL-iOs"/>
                             <constraint firstItem="ide-rL-irr" firstAttribute="top" secondItem="OqP-Ck-Nf3" secondAttribute="top" id="VY8-vk-FRC"/>
                             <constraint firstItem="UQ7-yg-eTp" firstAttribute="height" secondItem="t9y-f3-Fuu" secondAttribute="height" id="fm7-09-Jie"/>
-                            <constraint firstItem="OqP-Ck-Nf3" firstAttribute="trailing" secondItem="ide-rL-irr" secondAttribute="trailing" constant="-25" id="hit-bF-qYI"/>
+                            <constraint firstItem="ide-rL-irr" firstAttribute="trailing" secondItem="0cm-pY-cHB" secondAttribute="trailing" constant="15" id="hoH-CK-15G"/>
                             <constraint firstItem="UQ7-yg-eTp" firstAttribute="centerX" secondItem="ide-rL-irr" secondAttribute="centerX" id="lNq-Qv-mQf"/>
                             <constraint firstItem="1Rm-NF-ZYy" firstAttribute="width" secondItem="t9y-f3-Fuu" secondAttribute="width" id="sTt-nW-XXT"/>
                             <constraint firstItem="UQ7-yg-eTp" firstAttribute="width" secondItem="t9y-f3-Fuu" secondAttribute="width" id="siK-0v-9Dq"/>
@@ -179,7 +185,6 @@
                     <tabBarItem key="tabBarItem" title="Nearest Station" image="home" id="HCX-Pd-APq"/>
                     <connections>
                         <outlet property="stationLabel" destination="OqP-Ck-Nf3" id="78H-At-erj"/>
-                        <outlet property="stationLabelLeadingConstraint" destination="Jwf-18-Jmr" id="Scb-ie-fcc"/>
                         <outlet property="tableView" destination="1Rm-NF-ZYy" id="XYh-FM-Iiq"/>
                     </connections>
                 </viewController>
@@ -332,5 +337,6 @@
         <image name="Background" width="750" height="1334"/>
         <image name="home" width="23" height="21"/>
         <image name="list" width="30" height="23"/>
+        <image name="sign" width="22" height="23"/>
     </resources>
 </document>
