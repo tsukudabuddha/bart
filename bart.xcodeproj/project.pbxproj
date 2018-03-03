@@ -20,6 +20,7 @@
 		49BC8124202E670900200DA6 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8123202E670900200DA6 /* TimeTableViewController.swift */; };
 		49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8127202F55FF00200DA6 /* Estimate.swift */; };
 		49BC812A202F639400200DA6 /* TimeTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */; };
+		49D8DE7A204A327300B42448 /* DirectionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */; };
 		49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC61A202CF43900106F48 /* AppDelegate.swift */; };
 		49DAC620202CF43900106F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC61E202CF43900106F48 /* Main.storyboard */; };
 		49DAC622202CF43900106F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC621202CF43900106F48 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		49BC8123202E670900200DA6 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		49BC8127202F55FF00200DA6 /* Estimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
 		49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableTableViewCell.swift; sourceTree = "<group>"; };
+		49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsPopUpViewController.swift; sourceTree = "<group>"; };
 		49DAC617202CF43900106F48 /* bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DAC61A202CF43900106F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DAC61F202CF43900106F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		49E9AAAD2033EDE000915238 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */,
 				498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */,
 				49BC8123202E670900200DA6 /* TimeTableViewController.swift */,
 				49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */,
@@ -297,6 +300,7 @@
 				49A250752048E7B500FC6ED5 /* UITextField+extension.swift in Sources */,
 				49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */,
 				49E9AAAF2034B1F200915238 /* UIColor+extension.swift in Sources */,
+				49D8DE7A204A327300B42448 /* DirectionsPopUpViewController.swift in Sources */,
 				498379A0202D182500733412 /* Network.swift in Sources */,
 				49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */,
 			);
