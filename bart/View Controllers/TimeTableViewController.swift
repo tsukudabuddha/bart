@@ -12,6 +12,7 @@ import UIKit
 import CoreLocation
 
 class TimeTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var stationLabelLeadingConstraint: NSLayoutConstraint!
     
     var refreshTimer: Timer! // auto refresh times every 45 sec-- starts in view will appear
     var chosenStation: Station? = nil
@@ -19,8 +20,8 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var stationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var stationLabelLeadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var backButton: UIButton!
     var timeTable: TimeTable? = nil {
         didSet {
             DispatchQueue.main.async {
@@ -34,27 +35,22 @@ class TimeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         
         if self.showbackButton {
-            let buttonFrame = CGRect(x: 10, y: self.stationLabel.frame.midY, width: 25, height: 25)
-            let backButton = UIButton(frame: buttonFrame)
-            let backButtomImage = UIImage(named: "left-arrow")
-            backButton.setBackgroundImage(backButtomImage, for: .normal)
-            
-            self.view.addSubview(backButton)
-            
-            backButton.addTarget(self, action: #selector(popController), for: UIControlEvents.touchUpInside)
-            
-            /* Make button align with station label */
-            self.view.addConstraint(NSLayoutConstraint(item: backButton, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: stationLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
-            
-            self.view.removeConstraint(stationLabelLeadingConstraint)
-            
-            self.view.addConstraint(NSLayoutConstraint(item: stationLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: backButton, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 5))
+            backButton.isHidden = false
+            backButton.isEnabled = true
+
+        } else {
+            backButton.isHidden = true
+            backButton.isEnabled = false
         }
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        popController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         /* Start Refresh Timer */
-        refreshTimer = Timer.scheduledTimer(timeInterval: 45, target: self, selector: #selector(getTimeTable), userInfo: nil, repeats: true)
+        refreshTimer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(getTimeTable), userInfo: nil, repeats: true)
         
     }
     
