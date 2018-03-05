@@ -14,21 +14,37 @@ class DirectionsPopUpViewController: UIViewController {
     
     @IBOutlet weak var toTextField: SearchTextField!
     
+    var allStations: [Station]? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var stationNames: [String] = []
         // Do any additional setup after loading the view.
-        Network().getStations { (stationArray) in
-            stationNames = stationArray.map {station in station.name}
+        
+        if let allStations = self.allStations {
+            stationNames = allStations.map {station in station.name }
             self.fromTextField.filterStrings(stationNames)
             self.toTextField.filterStrings(stationNames)
+        } else {
+            Network().getStations { (stationArray) in
+                stationNames = stationArray.map {station in station.name}
+                self.fromTextField.filterStrings(stationNames)
+                self.toTextField.filterStrings(stationNames)
+            }
         }
+        
         
     }
 
     @IBAction func goPressed(_ sender: Any) {
+        let fromStation: Station? = nil
+        let toStation: Station? = nil
         
+        if let from = fromStation, let to = toStation {
+            let fAbb = from.abbreviation
+            let tAbb = to.abbreviation
+        }
     }
     
     @IBAction func cancelPressed(_ sender: Any) {

@@ -12,7 +12,6 @@ import UIKit
 import CoreLocation
 
 class TimeTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var stationLabelLeadingConstraint: NSLayoutConstraint!
     
     var refreshTimer: Timer! // auto refresh times every 45 sec-- starts in view will appear
     var chosenStation: Station? = nil

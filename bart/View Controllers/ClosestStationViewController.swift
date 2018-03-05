@@ -56,8 +56,9 @@ class ClosestStationViewController: TimeTableViewController {
     
     
     @IBAction func directionsClicked(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "directionsPopUp")
-        customPresentViewController(presenter, viewController: controller!, animated: true, completion: nil)
+        let controller = storyboard?.instantiateViewController(withIdentifier: "directionsPopUp") as! DirectionsPopUpViewController
+        controller.allStations = allStations
+        customPresentViewController(presenter, viewController: controller, animated: true, completion: nil)
     }
     
     
