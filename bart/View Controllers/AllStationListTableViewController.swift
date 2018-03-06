@@ -71,9 +71,10 @@ class AllStationListViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chosenStation = stations[indexPath.row]
-        let timeTableVC = storyboard?.instantiateViewController(withIdentifier: "timeTableVC") as! TimeTableViewController
+        let timeTableVC = storyboard?.instantiateViewController(withIdentifier: "timeTableVC") as! ClosestStationViewController
         timeTableVC.chosenStation = chosenStation
         timeTableVC.showbackButton = true
+        timeTableVC.allStations = self.stations
         
         /* Un-hilight row*/
         self.tableView.deselectRow(at: indexPath, animated: true)
