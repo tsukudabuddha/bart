@@ -14,6 +14,8 @@ class DirectionsPopUpViewController: UIViewController {
     
     @IBOutlet weak var toTextField: SearchTextField!
     
+    var currentStationName: String? = nil
+    
     var allStations: [Station]? = nil
     
     override func viewDidLoad() {
@@ -21,6 +23,10 @@ class DirectionsPopUpViewController: UIViewController {
         
         var stationNames: [String] = []
         // Do any additional setup after loading the view.
+        
+        if let name = currentStationName {
+            fromTextField.text = name
+        }
         
         if let allStations = self.allStations {
             stationNames = allStations.map {station in station.name }
@@ -38,21 +44,26 @@ class DirectionsPopUpViewController: UIViewController {
     }
 
     @IBAction func goPressed(_ sender: Any) {
-        let fromStation: Station? = nil
-        let toStation: Station? = nil
+        let fromStation = allStations?.filter {station in station.name == fromTextField.text}
+        let toStation = allStations?.filter {station in station.name == toTextField.text}
         
         if let from = fromStation, let to = toStation {
-            let fAbb = from.abbreviation
-            let tAbb = to.abbreviation
+            let fAbb = from[0].abbreviation
+            let tAbb = to[0].abbreviation
+            
+            let network = Network()
+            network.getDirections(tAbb: tAbb, fAbb: fAbb, completion: { (directions) in
+                print(directions)
+            })
         }
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
-//        self.pop
+        self.dismiss(animated: true)
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -60,6 +71,6 @@ class DirectionsPopUpViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

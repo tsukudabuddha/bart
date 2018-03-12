@@ -20,7 +20,7 @@ class ClosestStationViewController: TimeTableViewController {
     let presenter: Presentr = {
         let width = ModalSize.fluid(percentage: 0.80)
         let height = ModalSize.fluid(percentage: 0.40)
-        let center = ModalCenterPosition.topCenter
+        let center = ModalCenterPosition.center
         let customType = PresentationType.custom(width: width, height: height, center: center)
         
         let customPresenter = Presentr(presentationType: customType)
@@ -58,10 +58,9 @@ class ClosestStationViewController: TimeTableViewController {
     @IBAction func directionsClicked(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "directionsPopUp") as! DirectionsPopUpViewController
         controller.allStations = allStations
+        controller.currentStationName = self.stationLabel.text
         customPresentViewController(presenter, viewController: controller, animated: true, completion: nil)
     }
-    
-    
     
 }
 

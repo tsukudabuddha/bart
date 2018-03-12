@@ -44,4 +44,25 @@ class Network {
             
         }
     }
+    
+    func getDirections(tAbb: String, fAbb: String, completion: @escaping ([Trip]) -> ()) {
+        let queryString = "https://api.bart.gov/api/sched.aspx?cmd=depart&orig=\(fAbb)&dest=\(tAbb)&key=MW9S-E7SL-26DU-VV8V&json=y"
+        
+        if let queryUrl = URL(string: queryString) {
+            
+            Alamofire.request(queryUrl, method: .get).responseJSON(completionHandler: { (response) in
+                if let data = response.data {
+                    let directionsContainer = try? JSONDecoder().decode(DirectionsContainer.self, from: data)
+                    if let trip = directionsContainer?.trips {
+                        completion(trip)
+                    } else {
+                        print("trip fail")
+                    }
+                } else {
+                    print("response data error")
+                }
+            })
+            
+        }
+    }
 }

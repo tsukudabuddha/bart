@@ -10,6 +10,7 @@
 		49455C36202FDA330017926C /* TimeTableEntry+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49455C35202FDA330017926C /* TimeTableEntry+extension.swift */; };
 		49649006203E634900734ED3 /* Station+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49649005203E634900734ED3 /* Station+extension.swift */; };
 		4968F5BF203E539C00A7F011 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4968F5BE203E539C00A7F011 /* FavoritesViewController.swift */; };
+		497F79A7204F2BC0002A1396 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F79A6204F2BC0002A1396 /* Directions.swift */; };
 		4983799D202D118400733412 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799C202D118400733412 /* Station.swift */; };
 		498379A0202D182500733412 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4983799F202D182500733412 /* Network.swift */; };
 		498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */; };
@@ -34,6 +35,7 @@
 		49455C35202FDA330017926C /* TimeTableEntry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeTableEntry+extension.swift"; sourceTree = "<group>"; };
 		49649005203E634900734ED3 /* Station+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Station+extension.swift"; sourceTree = "<group>"; };
 		4968F5BE203E539C00A7F011 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		497F79A6204F2BC0002A1396 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		4983799C202D118400733412 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		4983799F202D182500733412 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationListTableViewController.swift; sourceTree = "<group>"; };
@@ -85,10 +87,18 @@
 				49BC8127202F55FF00200DA6 /* Estimate.swift */,
 				4983799C202D118400733412 /* Station.swift */,
 				4983799F202D182500733412 /* Network.swift */,
+				497F79A6204F2BC0002A1396 /* Directions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49C46783205473CA00B714FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				498379A3202D1F1B00733412 /* StationTableViewCell.swift */,
 				49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */,
 			);
-			path = Models;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		49DAC60E202CF43900106F48 = {
@@ -113,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				49DAC61A202CF43900106F48 /* AppDelegate.swift */,
+				49C46783205473CA00B714FF /* Views */,
 				4983799E202D118B00733412 /* Models */,
 				49E9AAAD2033EDE000915238 /* View Controllers */,
 				49455C32202FD7050017926C /* Extensions */,
@@ -302,6 +313,7 @@
 				49E9AAAF2034B1F200915238 /* UIColor+extension.swift in Sources */,
 				49D8DE7A204A327300B42448 /* DirectionsPopUpViewController.swift in Sources */,
 				498379A0202D182500733412 /* Network.swift in Sources */,
+				497F79A7204F2BC0002A1396 /* Directions.swift in Sources */,
 				49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
