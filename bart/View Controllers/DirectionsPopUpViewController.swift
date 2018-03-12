@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol directionsDelegate {
+    func showDirections(controller: DirectionsPageViewController)
+}
+
 class DirectionsPopUpViewController: UIViewController {
 
     @IBOutlet weak var fromTextField: SearchTextField!
@@ -17,6 +21,7 @@ class DirectionsPopUpViewController: UIViewController {
     var currentStationName: String? = nil
     
     var allStations: [Station]? = nil
+    var delegate: directionsDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +53,21 @@ class DirectionsPopUpViewController: UIViewController {
         let toStation = allStations?.filter {station in station.name == toTextField.text}
         
         if let from = fromStation, let to = toStation {
-            let fAbb = from[0].abbreviation
-            let tAbb = to[0].abbreviation
-            
-            let network = Network()
-            network.getDirections(tAbb: tAbb, fAbb: fAbb, completion: { (directions) in
-                print(directions)
-            })
+            if from.count > 0 && to.count > 0 {
+                let fAbb = from[0].abbreviation
+                let tAbb = to[0].abbreviation
+                
+                let network = Network()
+                network.getDirections(tAbb: tAbb, fAbb: fAbb, completion: { (directions) in
+                    let directionsPageVC = self.storyboard?.instantiateViewController(withIdentifier: "directionsPageVC") as! DirectionsPageViewController
+                    directionsPageVC.trips = directions
+                    self.delegate?.showDirections(controller: directionsPageVC)
+                    self.dismiss(animated: true)
+                })
+            } else {
+                // TODO: Show red text telling user
+                print("Wrong station names")
+            }
         }
     }
     

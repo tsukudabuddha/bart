@@ -11,7 +11,11 @@ import CoreLocation
 import UIKit
 import Presentr
 
-class ClosestStationViewController: TimeTableViewController {
+class ClosestStationViewController: TimeTableViewController, directionsDelegate {
+    func showDirections(controller: DirectionsPageViewController) {
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     var locationManager: CLLocationManager!
     var allStations: [Station] = []
@@ -59,6 +63,7 @@ class ClosestStationViewController: TimeTableViewController {
         let controller = storyboard?.instantiateViewController(withIdentifier: "directionsPopUp") as! DirectionsPopUpViewController
         controller.allStations = allStations
         controller.currentStationName = self.stationLabel.text
+        controller.delegate = self
         customPresentViewController(presenter, viewController: controller, animated: true, completion: nil)
     }
     

@@ -17,10 +17,13 @@
 		498379A4202D1F1B00733412 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498379A3202D1F1B00733412 /* StationTableViewCell.swift */; };
 		49A250752048E7B500FC6ED5 /* UITextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A250742048E7B400FC6ED5 /* UITextField+extension.swift */; };
 		49A7497F2044B84200EAB383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A7497E2044B84200EAB383 /* LaunchScreen.storyboard */; };
+		49A93A2A205641A300A80163 /* DirectionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A93A29205641A300A80163 /* DirectionsPageViewController.swift */; };
+		49A93A2C205644A800A80163 /* DirectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A93A2B205644A800A80163 /* DirectionsTableViewCell.swift */; };
 		49ADF1D8203E26AF00680982 /* ClosestStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */; };
 		49BC8124202E670900200DA6 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8123202E670900200DA6 /* TimeTableViewController.swift */; };
 		49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8127202F55FF00200DA6 /* Estimate.swift */; };
 		49BC812A202F639400200DA6 /* TimeTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */; };
+		49C4678520563E5200B714FF /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4678420563E5200B714FF /* DirectionsViewController.swift */; };
 		49D8DE7A204A327300B42448 /* DirectionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */; };
 		49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC61A202CF43900106F48 /* AppDelegate.swift */; };
 		49DAC620202CF43900106F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC61E202CF43900106F48 /* Main.storyboard */; };
@@ -42,10 +45,13 @@
 		498379A3202D1F1B00733412 /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		49A250742048E7B400FC6ED5 /* UITextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extension.swift"; sourceTree = "<group>"; };
 		49A7497E2044B84200EAB383 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49A93A29205641A300A80163 /* DirectionsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsPageViewController.swift; sourceTree = "<group>"; };
+		49A93A2B205644A800A80163 /* DirectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsTableViewCell.swift; sourceTree = "<group>"; };
 		49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosestStationViewController.swift; sourceTree = "<group>"; };
 		49BC8123202E670900200DA6 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		49BC8127202F55FF00200DA6 /* Estimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
 		49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableTableViewCell.swift; sourceTree = "<group>"; };
+		49C4678420563E5200B714FF /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsPopUpViewController.swift; sourceTree = "<group>"; };
 		49DAC617202CF43900106F48 /* bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DAC61A202CF43900106F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 			children = (
 				498379A3202D1F1B00733412 /* StationTableViewCell.swift */,
 				49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */,
+				49A93A2B205644A800A80163 /* DirectionsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,7 +145,9 @@
 		49E9AAAD2033EDE000915238 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				49A93A29205641A300A80163 /* DirectionsPageViewController.swift */,
 				49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */,
+				49C4678420563E5200B714FF /* DirectionsViewController.swift */,
 				498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */,
 				49BC8123202E670900200DA6 /* TimeTableViewController.swift */,
 				49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */,
@@ -301,6 +310,7 @@
 				49649006203E634900734ED3 /* Station+extension.swift in Sources */,
 				498379A2202D1EAE00733412 /* AllStationListTableViewController.swift in Sources */,
 				49BC812A202F639400200DA6 /* TimeTableTableViewCell.swift in Sources */,
+				49A93A2C205644A800A80163 /* DirectionsTableViewCell.swift in Sources */,
 				49455C36202FDA330017926C /* TimeTableEntry+extension.swift in Sources */,
 				4968F5BF203E539C00A7F011 /* FavoritesViewController.swift in Sources */,
 				49E9AAB12034C28100915238 /* MainTabBarViewController.swift in Sources */,
@@ -314,7 +324,9 @@
 				49D8DE7A204A327300B42448 /* DirectionsPopUpViewController.swift in Sources */,
 				498379A0202D182500733412 /* Network.swift in Sources */,
 				497F79A7204F2BC0002A1396 /* Directions.swift in Sources */,
+				49C4678520563E5200B714FF /* DirectionsViewController.swift in Sources */,
 				49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */,
+				49A93A2A205641A300A80163 /* DirectionsPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
