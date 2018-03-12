@@ -12,7 +12,7 @@ protocol directionsDelegate {
     func showDirections(controller: DirectionsPageViewController)
 }
 
-class DirectionsPopUpViewController: UIViewController {
+class DirectionsPopUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var fromTextField: SearchTextField!
     
@@ -33,6 +33,10 @@ class DirectionsPopUpViewController: UIViewController {
             fromTextField.text = name
         }
         
+        /* Set Delegates of text fields */
+        fromTextField.delegate = self
+        toTextField.delegate = self
+        
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.view.addGestureRecognizer(tapRecognizer)
         
@@ -49,6 +53,13 @@ class DirectionsPopUpViewController: UIViewController {
         }
         
         
+    }
+    
+    /* UIText FIeld Delegate Func */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        goPressed(self)
+        return true
     }
     
     @objc func hideKeyboard() {
