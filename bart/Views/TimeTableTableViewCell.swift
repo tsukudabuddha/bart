@@ -28,10 +28,13 @@ class TimeTableTableViewCell: UITableViewCell {
         self.backgroundColor = UIColor.clear
         selectedBackgroundView?.backgroundColor = UIColor.clear
         
+        /* Make Cell not selectable (In Appearance) */
+        self.selectionStyle = .none
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: true)
+        super.setSelected(true, animated: true)
 
         // Configure the view for the selected state
     }

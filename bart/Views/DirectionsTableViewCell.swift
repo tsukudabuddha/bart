@@ -16,6 +16,17 @@ class DirectionsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        /* Create white border around each cell */
+        self.contentView.layer.borderColor = UIColor.white.cgColor
+        self.contentView.layer.borderWidth = 0.5
+        
+        /* Make Each Cell transparent °•°° */
+        self.backgroundColor = UIColor.clear
+        selectedBackgroundView?.backgroundColor = UIColor.clear
+        
+        /* Make Cell not selectable (In Appearance) */
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
