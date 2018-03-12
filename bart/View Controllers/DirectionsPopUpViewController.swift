@@ -33,6 +33,9 @@ class DirectionsPopUpViewController: UIViewController {
             fromTextField.text = name
         }
         
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
         if let allStations = self.allStations {
             stationNames = allStations.map {station in station.name }
             self.fromTextField.filterStrings(stationNames)
@@ -46,6 +49,11 @@ class DirectionsPopUpViewController: UIViewController {
         }
         
         
+    }
+    
+    @objc func hideKeyboard() {
+        fromTextField.resignFirstResponder()
+        toTextField.resignFirstResponder()
     }
 
     @IBAction func goPressed(_ sender: Any) {
@@ -74,16 +82,5 @@ class DirectionsPopUpViewController: UIViewController {
     @IBAction func cancelPressed(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
 
 }
