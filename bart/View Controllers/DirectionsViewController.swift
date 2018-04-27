@@ -11,11 +11,20 @@ import UIKit
 class DirectionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var trip: Trip? = nil
+    var allStations: [Station]? = nil
+    var stationDict = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        /* Create Station Dictionary */
+        if let allStations = self.allStations {
+            for station in allStations {
+                stationDict[station.abbreviation] = station.name
+            }
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -28,9 +37,11 @@ class DirectionsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "directionsCell") as! DirectionsTableViewCell
         if let leg = trip?.legs[indexPath.row] {
-            cell.originStationLabel.text = leg.origin
+            cell.originStationLabel.text = stationDict[leg.origin]
             cell.originTime.text = leg.originTime
-            cell.destinationStationLabel.text = leg.destination
+            cell.destinationStationLabel.text = stationDict[leg.destination]
+            cell.destinationTimeLabel.text = leg.destinationTime
+            cell.headTrainLabel.text = "\(stationDict[leg.trainHeadStation]) train"
         }
         
         return cell

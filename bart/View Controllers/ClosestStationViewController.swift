@@ -13,7 +13,7 @@ import Presentr
 
 class ClosestStationViewController: TimeTableViewController, directionsDelegate {
     func showDirections(controller: DirectionsPageViewController) {
-        
+        controller.allStations = allStations
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

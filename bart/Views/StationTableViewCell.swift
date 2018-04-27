@@ -24,6 +24,7 @@ class StationTableViewCell: UITableViewCell {
         
         /* Change text color to white */
         self.textLabel?.textColor = UIColor.white
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

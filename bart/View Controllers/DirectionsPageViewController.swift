@@ -6,11 +6,14 @@
 //  Copyright © 2018 Andrew Tsukuda. All rights reserved.
 //
 
+// Page View Stuff https://medium.com/how-to-swift/how-to-create-a-uipageviewcontroller-a948047fb6af
+
 import UIKit
 
 class DirectionsPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     var trips: [Trip]? = nil
+    var allStations: [Station]? = nil
     
     fileprivate lazy var pages: [DirectionsViewController] = {
         return [
@@ -25,6 +28,7 @@ class DirectionsPageViewController: UIPageViewController, UIPageViewControllerDe
     {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as! DirectionsViewController
         vc.trip = self.trips?[index] ?? Trip(fare: "Broken", departingTime: "Broken", arrivalTime: "Broken", legs: [], travelTime: "Broken")
+        vc.allStations = allStations
         return vc
     }
     

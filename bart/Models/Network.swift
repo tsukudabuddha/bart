@@ -46,7 +46,7 @@ class Network {
     }
     
     func getDirections(tAbb: String, fAbb: String, completion: @escaping ([Trip]) -> ()) {
-        let queryString = "https://api.bart.gov/api/sched.aspx?cmd=depart&orig=\(fAbb)&dest=\(tAbb)&key=MW9S-E7SL-26DU-VV8V&json=y"
+        let queryString = "https://api.bart.gov/api/sched.aspx?cmd=depart&orig=\(fAbb)&dest=\(tAbb)&b=0&a=4&key=MW9S-E7SL-26DU-VV8V&json=y"
         
         if let queryUrl = URL(string: queryString) {
             
