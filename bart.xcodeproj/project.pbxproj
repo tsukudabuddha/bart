@@ -20,11 +20,12 @@
 		49A93A2A205641A300A80163 /* DirectionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A93A29205641A300A80163 /* DirectionsPageViewController.swift */; };
 		49A93A2C205644A800A80163 /* DirectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A93A2B205644A800A80163 /* DirectionsTableViewCell.swift */; };
 		49ADF1D8203E26AF00680982 /* ClosestStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */; };
+		49AFC63220939E61006BDA83 /* DirectionsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AFC63020939E61006BDA83 /* DirectionsPopupViewController.swift */; };
+		49AFC63320939E61006BDA83 /* DirectionsPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49AFC63120939E61006BDA83 /* DirectionsPopupViewController.xib */; };
 		49BC8124202E670900200DA6 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8123202E670900200DA6 /* TimeTableViewController.swift */; };
 		49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8127202F55FF00200DA6 /* Estimate.swift */; };
 		49BC812A202F639400200DA6 /* TimeTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */; };
 		49C4678520563E5200B714FF /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4678420563E5200B714FF /* DirectionsViewController.swift */; };
-		49D8DE7A204A327300B42448 /* DirectionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */; };
 		49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC61A202CF43900106F48 /* AppDelegate.swift */; };
 		49DAC620202CF43900106F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC61E202CF43900106F48 /* Main.storyboard */; };
 		49DAC622202CF43900106F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DAC621202CF43900106F48 /* Assets.xcassets */; };
@@ -48,11 +49,12 @@
 		49A93A29205641A300A80163 /* DirectionsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsPageViewController.swift; sourceTree = "<group>"; };
 		49A93A2B205644A800A80163 /* DirectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsTableViewCell.swift; sourceTree = "<group>"; };
 		49ADF1D7203E26AF00680982 /* ClosestStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosestStationViewController.swift; sourceTree = "<group>"; };
+		49AFC63020939E61006BDA83 /* DirectionsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsPopupViewController.swift; sourceTree = "<group>"; };
+		49AFC63120939E61006BDA83 /* DirectionsPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionsPopupViewController.xib; sourceTree = "<group>"; };
 		49BC8123202E670900200DA6 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		49BC8127202F55FF00200DA6 /* Estimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
 		49BC8129202F639400200DA6 /* TimeTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableTableViewCell.swift; sourceTree = "<group>"; };
 		49C4678420563E5200B714FF /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
-		49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsPopUpViewController.swift; sourceTree = "<group>"; };
 		49DAC617202CF43900106F48 /* bart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DAC61A202CF43900106F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DAC61F202CF43900106F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,7 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				49A93A29205641A300A80163 /* DirectionsPageViewController.swift */,
-				49D8DE79204A327300B42448 /* DirectionsPopUpViewController.swift */,
+				49AFC63020939E61006BDA83 /* DirectionsPopupViewController.swift */,
+				49AFC63120939E61006BDA83 /* DirectionsPopupViewController.xib */,
 				49C4678420563E5200B714FF /* DirectionsViewController.swift */,
 				498379A1202D1EAE00733412 /* AllStationListTableViewController.swift */,
 				49BC8123202E670900200DA6 /* TimeTableViewController.swift */,
@@ -239,6 +242,7 @@
 				49A7497F2044B84200EAB383 /* LaunchScreen.storyboard in Resources */,
 				49DAC622202CF43900106F48 /* Assets.xcassets in Resources */,
 				49DAC620202CF43900106F48 /* Main.storyboard in Resources */,
+				49AFC63320939E61006BDA83 /* DirectionsPopupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,9 +325,9 @@
 				49A250752048E7B500FC6ED5 /* UITextField+extension.swift in Sources */,
 				49BC8128202F55FF00200DA6 /* Estimate.swift in Sources */,
 				49E9AAAF2034B1F200915238 /* UIColor+extension.swift in Sources */,
-				49D8DE7A204A327300B42448 /* DirectionsPopUpViewController.swift in Sources */,
 				498379A0202D182500733412 /* Network.swift in Sources */,
 				497F79A7204F2BC0002A1396 /* Directions.swift in Sources */,
+				49AFC63220939E61006BDA83 /* DirectionsPopupViewController.swift in Sources */,
 				49C4678520563E5200B714FF /* DirectionsViewController.swift in Sources */,
 				49DAC61B202CF43900106F48 /* AppDelegate.swift in Sources */,
 				49A93A2A205641A300A80163 /* DirectionsPageViewController.swift in Sources */,
